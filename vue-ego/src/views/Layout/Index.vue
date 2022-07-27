@@ -1,9 +1,12 @@
 <template>
   <div class="layout">
-    <MyMenu class="menu"></MyMenu>
-    <Content class="content"></Content>
+<!--    //receive data-->
+    <MyMenu class="menu" :is-collapse="isCollapse"></MyMenu>
+    <Content class="content"
+             :class="{isActive:isCollapse}"
+             @changeCollapse='changeCollapse'
+             :isCollapse='isCollapse'></Content>
   </div>
-
 </template>
 <script>
 // import Menu and Content
@@ -15,6 +18,16 @@ export default {
   components: {
     MyMenu,
     Content
+  },
+  data() {
+    return {
+      isCollapse: false
+    }
+  },
+  methods: {
+    changeCollapse() {
+      this.isCollapse = !this.isCollapse;
+    }
   }
 }
 </script>

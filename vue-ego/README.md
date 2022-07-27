@@ -55,3 +55,18 @@ npm install less@3.9.0 less-loader@4.1.0 --save-dev
 ##布局相关
 https://juejin.cn/post/6986935474635931656
 
+##开发工具
+ngrok
+ngrok config add-authtoken 1mMr4VHUPxIzOZSrGWVGCEvSDAu_6jGV3aE66Xpj2RqyX7p8M
+ngrok http 80
+如果不能启动访问那么走一下路径
+vue 默认会阻止来自其他来源的所有请求。
+ngrok http 8081 --host-header=rewrite
+
+找不到elementUi
+import ElementUI from 'element-ui' //element-ui的全部组件
+import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
+Vue.use(ElementUI) //使用elementUI
+不折叠
+必须有span
+

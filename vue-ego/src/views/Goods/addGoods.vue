@@ -1,12 +1,12 @@
 <template>
-  <div>
-    商品
-  </div>
+<h2>
+<span>添加商品</span>
+</h2>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'addGoods'
 }
 </script>
 

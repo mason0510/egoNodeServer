@@ -31,6 +31,10 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  devServer: {
+    compress: true,
+    public: 'store-client-nestroia1.c9users.io' // That solved it
+  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

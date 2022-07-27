@@ -17,6 +17,17 @@ const OrderList=()=>import('../views/Order/OrderList/index.vue')
 const OrderBack=()=>import('../views/Order/OrderBack/index.vue')
 const ChangeGoods=()=>import('../views/Order/ChangeGoods/index.vue')
 const SendGoods=()=>import('../views/Order/SendGoods/index.vue')
+//User
+const User=()=>import('../views/User/user.vue')
+//GoodList Goods-verify
+const GoodList=()=>import('../views/Goods/GoodsList/index.vue')
+const GoodsVerify=()=>import('../views/Goods/GoodsVerify/index.vue')
+//AddGoods
+const AddGoods=()=>import('../views/Goods/addGoods.vue')
+
+//Specifications
+const Specifications=()=>import('../views/Params/Specifications.vue')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,9 +35,9 @@ const routes = [
     path:'',
     component:Index,
     //路由元信息
-    // meta:{
-    //   isLogin:true
-    // },
+    meta:{
+      isLogin:false //是否需要登陆
+    },
     children:[
       {
         path:'/',
@@ -37,16 +48,37 @@ const routes = [
         path:'/goods',
         name:'Goods',
         component:Goods,
+        redirect: '/goods/goods-list',
+        chileren:[
+          {
+            path:'/goods/goods-list',
+            name:'GoodsList',
+            component:GoodList
+          },
+          {
+            path:'/goods/goods-verify',
+            name:'GoodsVerify',
+            component:GoodsVerify
+          }
+        ]
       },
       {
         path:'/add-goods',
         name:'AddGoods',
-        component:Goods
+        component:AddGoods
       },
       {
-        path:'/goodsParams',
-        name:'Params',
-        component:Params,
+        path: '/params',
+        name: 'Params',
+        component: Params,
+        redirect: '/params/specifications',
+        chileren: [
+          {
+            path: '/params/specifications',
+            name: 'Specifications',
+            component: Specifications
+          }
+        ],
       },
       {
         path:'/advert',
@@ -64,18 +96,23 @@ const routes = [
             component:OrderList
           },
           {
-            path:'order-back',
-            component:OrderBack
+            path:'send-goods',
+            component:SendGoods
           },
           {
             path:'change-goods',
             component:ChangeGoods
           },
           {
-            path:'send-goods',
-            component:SendGoods
+            path:'order-back',
+            component: OrderBack
           }
         ]
+      },
+      {
+        path:'/user',
+        name:'User',
+        component:User
       }
     ]
   },
