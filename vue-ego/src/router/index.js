@@ -11,8 +11,12 @@ const Params=()=>import('../views/Params/Params.vue')
 //Advert
 const Advert=()=>import('../views/Advert/Advert.vue')
 //Orders
-const Orders=()=>import('../views/Order/index.vue')
-
+const Order=()=>import('../views/Order/index.vue')
+//define OrderList  OrderBack ChangeGoods SendGoods
+const OrderList=()=>import('../views/Order/OrderList/index.vue')
+const OrderBack=()=>import('../views/Order/OrderBack/index.vue')
+const ChangeGoods=()=>import('../views/Order/ChangeGoods/index.vue')
+const SendGoods=()=>import('../views/Order/SendGoods/index.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,18 +37,6 @@ const routes = [
         path:'/goods',
         name:'Goods',
         component:Goods,
-        // redirect:'/goods/goods-list',
-        // children:[
-        //   {
-        //     path:'goods-list',
-        //     name:'GoodsList',
-        //     component:GoodsList
-        //   },{
-        //     path:'goods-verify',
-        //     name:'GoodsVerify',
-        //     component:GoodsVerify
-        //   }
-        // ]
       },
       {
         path:'/add-goods',
@@ -52,52 +44,39 @@ const routes = [
         component:Goods
       },
       {
-        path:'/params',
+        path:'/goodsParams',
         name:'Params',
         component:Params,
-        // redirect:'/params/specifications',
-        // children:[
-        //   {
-        //     path:'specifications',
-        //     name:'Specifications',
-        //     component:Specifications
-        //   }
-        // ]
       },
       {
         path:'/advert',
         name:'Advert',
         component:Advert
       },
-      // {
-      //   path:'/user',
-      //   name:'User',
-      //   component:User
-      // },
-      // {
-      //   path:'/order',
-      //   name:'Order',
-      //   component:Order,
-      //   redirect:'/order/order-list',
-      //   children:[
-      //     {
-      //       path:'order-list',
-      //       component:OrderList
-      //     },
-      //     {
-      //       path:'order-back',
-      //       component:OrderBack
-      //     },
-      //     {
-      //       path:'change-goods',
-      //       component:ChangeGoods
-      //     },
-      //     {
-      //       path:'send-goods',
-      //       component:SendGoods
-      //     }
-      //   ]
-      // }
+      {
+        path:'/orders',
+        name:'Order',
+        component:Order,
+        redirect:'/orders/order-list',
+        children:[
+          {
+            path:'order-list',
+            component:OrderList
+          },
+          {
+            path:'order-back',
+            component:OrderBack
+          },
+          {
+            path:'change-goods',
+            component:ChangeGoods
+          },
+          {
+            path:'send-goods',
+            component:SendGoods
+          }
+        ]
+      }
     ]
   },
   {

@@ -1,6 +1,9 @@
 <template>
 <div>
-  <router-view/>
+  <h2>
+    订单列表
+    </h2>
+  <router-view />
 </div>
 </template>
 
