@@ -1,2 +1,0 @@
-# vue-ego
-vue managment
