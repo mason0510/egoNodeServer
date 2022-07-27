@@ -1,12 +1,10 @@
 <template>
-<div>
-  规格参数
-</div>
+    <router-view/>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'Params'
 }
 </script>
 

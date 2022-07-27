@@ -7,7 +7,7 @@
       text-color="#fff"
       active-text-color="#ffd04b"
       :collapse="isCollapse"
-      router=true
+      router
     >
       <el-menu-item>
         <span slot="title">后台管理系统</span>
@@ -22,6 +22,7 @@
           <i class="el-icon-location"></i>
           <span>商品管理</span>
         </template>
+        <el-menu-item-group>
         <el-menu-item index="/goods/goods-list">
           <i class="el-icon-menu"></i>
           <span slot="title">商品列表</span>
@@ -31,30 +32,35 @@
           <i class="el-icon-menu"></i>
           <span slot="title">商品审核</span>
         </el-menu-item>
+        </el-menu-item-group>
       </el-submenu>
+
       <!--    规格包装-->
       <el-submenu index="/params">
         <template slot="title">
           <i class="el-icon-setting"></i>
           <span>规格包装</span>
         </template>
+        <el-menu-item-group>
         <el-menu-item index="/params/specifications">
           <i class="el-icon-setting"></i>
           <span slot="title">规格包装</span>
         </el-menu-item>
+        </el-menu-item-group>
       </el-submenu>
+
       <!--      广告分类-->
       <el-menu-item index="/advert">
         <i class="el-icon-data-board"></i>
         <span slot="title">广告分类</span>
       </el-menu-item>
+
       <!--      订单管理-->
       <el-submenu index="/orders">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>订单管理</span>
         </template>
-
         <el-menu-item-group>
           <el-menu-item index="/orders/order-list">
             <i class="el-icon-menu"></i>

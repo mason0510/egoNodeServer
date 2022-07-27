@@ -20,10 +20,10 @@ const SendGoods=()=>import('../views/Order/SendGoods/index.vue')
 //User
 const User=()=>import('../views/User/user.vue')
 //GoodList Goods-verify
-const GoodList=()=>import('../views/Goods/GoodsList/index.vue')
+const GoodList=()=>import('../views/Goods/GoodsList/goods.vue')
 const GoodsVerify=()=>import('../views/Goods/GoodsVerify/index.vue')
 //AddGoods
-const AddGoods=()=>import('../views/Goods/addGoods.vue')
+const AddGoods=()=>import('../views/Goods/GoodsList/addGoods.vue')
 
 //Specifications
 const Specifications=()=>import('../views/Params/Specifications.vue')
@@ -49,7 +49,7 @@ const routes = [
         name:'Goods',
         component:Goods,
         redirect: '/goods/goods-list',
-        chileren:[
+        children:[
           {
             path:'/goods/goods-list',
             name:'GoodsList',
@@ -72,7 +72,7 @@ const routes = [
         name: 'Params',
         component: Params,
         redirect: '/params/specifications',
-        chileren: [
+        children: [
           {
             path: '/params/specifications',
             name: 'Specifications',

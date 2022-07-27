@@ -1,7 +1,5 @@
 <template>
-  <div>
-    商品
-  </div>
+  <router-view/>
 </template>
 
 <script>

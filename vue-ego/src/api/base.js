@@ -1,5 +1,5 @@
 const base = {
-  host: 'http://localhost:3000',
+  host: 'http://localhost:8989',
   goodsList: '/api/projectList', // 商品列表
   search: '/api/search', // 商品搜索
   selectCategory: '/api/backend/itemCategory/selectItemCategoryByParentId', // 类目选择
