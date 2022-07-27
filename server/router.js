@@ -82,6 +82,7 @@ router.post("/register", (req, res) => {
  * 参数：page 页码
  */
 router.get('/projectList', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const page = req.query.page || 1;
     const sqlLen = "select * from project where id";
     sqlFn(sqlLen, null, data => {
