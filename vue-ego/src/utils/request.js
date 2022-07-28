@@ -1,7 +1,10 @@
 // import axios qs
 // @ts-ignore
 import axios from 'axios'
+import VueAxios from 'vue-axios'
 import qs from 'qs'
+
+
 const ErrorHandler = (status, error) => {
   switch (status) {
     case 400:
@@ -22,10 +25,11 @@ const ErrorHandler = (status, error) => {
   }
 }
 
+
 // new axios instance
 const instance = axios.create({
   baseURL: 'http://localhost:8989/',
-  timeout: 10000
+  timeout: 5000
 })
 
 // add a request interceptor

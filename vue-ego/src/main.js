@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
 
 import './plugins/element.js'
 import './assets/css/reset.css'
@@ -11,25 +10,22 @@ import './assets/css/iconfont.css'
 
 import api from './api/index.js'
 Vue.prototype.$api = api;
+import store from './store'
 import './router/permission'
-import './utils/LocalStorage'
+import './utils/localStorage'
+Vue.prototype.store = store;
+
 
 import ElementUI from 'element-ui' //element-ui的全部组件
 import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 Vue.use(ElementUI) //使用elementUI
-
 // develop mode
 Vue.config.productionTip = false
 
-//inject api
-Vue.prototype.$api = api;
 /* eslint-disable no-new */
 new Vue({
   router,
-  components: { App },
-  template: '<App/>',
-  render (createElement, context) {
-    return createElement(App)
-  },
-  store
+  store,
+  render: h => h(App)
+
 }).$mount('#app')

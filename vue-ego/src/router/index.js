@@ -5,6 +5,7 @@ import Login from '../views/Login/Login.vue'
 import MyMenu from '../views/Layout/MyMenu.vue'
 import Content from '../views/Layout/Content.vue'
 import Home from '../views/Home/index.vue'
+import store from '../store'
 const Goods=()=>import('../views/Goods/index.vue')
 //params
 const Params=()=>import('../views/Params/Params.vue')
@@ -30,13 +31,14 @@ const Specifications=()=>import('../views/Params/Specifications.vue')
 
 Vue.use(VueRouter)
 
+
 const routes = [
   {
     path:'',
     component:Index,
     //路由元信息
     meta:{
-      isLogin:false //是否需要登陆
+      isLogin:true //是否需要登陆
     },
     children:[
       {

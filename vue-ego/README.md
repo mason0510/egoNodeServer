@@ -70,3 +70,10 @@ Vue.use(ElementUI) //使用elementUI
 不折叠
 必须有span
 
+发送数据无法收到
+改变前端参数
+
+无法跳转 保存token到vuex
+https://laracasts.com/discuss/channels/vue/vuex-anybody-typeerror-thisstorecommit-is-not-a-function
+
+##公共组件

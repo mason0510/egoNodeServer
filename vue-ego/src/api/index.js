@@ -1,9 +1,23 @@
 import axios from '../utils/request'
 import base from './base'
-
+import Vue from 'vue'
+const qs=require('querystring')
 const api = {
+  TestLogin: (data) => {
+    let data1 = {
+        "username": "admin",
+        "password": "123"
+      };
+    return axios.post(base.test,qs.stringify(data1))
+  },
+
   getLogin (params) {
-    return axios.post(`${base}/login`, params)
+    return axios.post(base.login,       {
+      params: {
+        username: params.username,
+        password: params.password
+      }
+    })
   },
   /**
    * 商品列表
@@ -11,14 +25,22 @@ const api = {
   getGoodsList (params) { // {page:xx}
     return axios.get(base.goodsList, {
       params
-    })
+    }
+    )
   },
   /**
    * 搜索商品数据
    * search
    */
   getSearch (params) { // {search:xx}
-    return axios.get(base.search, { params })
+    return axios.get(base.search,
+      {
+        params: {
+          search: params
+        }
+      }
+
+    )
   },
   /**
    * 获取类目选择
