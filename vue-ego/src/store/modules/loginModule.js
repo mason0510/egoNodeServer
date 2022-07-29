@@ -12,18 +12,20 @@ export default {
       state.userinfo = payload;
     },
     //清空
-    clearUser(state){
-      state.userinfo={
-        user:'',
-        token:''
+    clearUser(state) {
+      state.userinfo = {
+        user: '',
+        token: ''
       }
-    }
+    },
   },
   actions:{
 
   },
   getters:{
-
+    getUsername(state){
+      return state.userinfo;
+    },
   }
 
 }

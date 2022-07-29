@@ -75,12 +75,13 @@ export default {
                 user:jwt.username,
                 token:res.data.data,
               }
+              console.log("setUser:=",obj);
               this.setUser(obj)
               //save local
               localStorage.setItem("user",JSON.stringify(obj));
               console.log("setItem:=",obj);
               //jymp
-               this.$router.push('/');
+              this.$router.push('/');
               this.info="";
             }else{
               this.alert(res.data.message);

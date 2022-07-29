@@ -2,8 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/Layout/Index.vue'
 import Login from '../views/Login/Login.vue'
-import MyMenu from '../views/Layout/MyMenu.vue'
-import Content from '../views/Layout/Content.vue'
 import Home from '../views/Home/index.vue'
 import store from '../store'
 const Goods=()=>import('../views/Goods/index.vue')
@@ -25,13 +23,10 @@ const GoodList=()=>import('../views/Goods/GoodsList/goods.vue')
 const GoodsVerify=()=>import('../views/Goods/GoodsVerify/index.vue')
 //AddGoods
 const AddGoods=()=>import('../views/Goods/GoodsList/addGoods.vue')
-
 //Specifications
 const Specifications=()=>import('../views/Params/Specifications.vue')
 
 Vue.use(VueRouter)
-
-
 const routes = [
   {
     path:'',

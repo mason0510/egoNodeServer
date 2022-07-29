@@ -6,29 +6,34 @@
          class="iconfont icon-left-indent"></i>
       顶部区域
     </div>
+
     <div class="content"/>
 
-    <div class="user">
-      欢迎 {{userinfo.user}}
-      <i @click="logout" class="iconfont icon-logout"></i>
-
+    <div>
+      欢迎{{this.userinfo.user}} 到来
+      <i @click="logout" class="iconfont icon-exit"></i>
     </div>
-<!--    send /-->
+
     <router-view/>
   </div>
 </template>
 
 <script>
-//mapState('loginModule',['user'])
 import { mapState ,mapMutations} from 'vuex';
 export default {
   props:['isCollapse'],
   computed: {
     ...mapState('loginModule',['userinfo']),
+    doneTodos() {
+      return this.$store.loginModule.getters.getUsername;
+    }
+  },
+  created () {
+    console.log("userinfo",this.userinfo.user);
   },
   methods: {
-    ...mapMutations('loginModule',['clearUser']),
-    changMenu() {//fix uppper data
+    ...mapMutations('loginModule',['setUser','clearUser']),
+    changMenu() {
       this.$emit('changeCollapse')
     },
     logout() {
