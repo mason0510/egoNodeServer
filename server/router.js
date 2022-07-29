@@ -26,11 +26,8 @@ const Mock = require('mockjs');
  */
 global.count=0;
 router.post('/Login', (req, res) => {
-    console.log("req++++++++++++++++++++++body",count++,req.body)
-    var username=req.body.params.username;
-    var password=req.body.params.password;
-    console.log("username,password",username,password)
-    //请求数据库
+    var username=req.body.username;
+    var password=req.body.password;
     let sql = "select * from userinfo where username=? and password=?";
     let arr = [username, password]
     sqlFn(sql, arr, result => {

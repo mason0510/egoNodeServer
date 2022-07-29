@@ -12,12 +12,7 @@ const api = {
   },
 
   getLogin (params) {
-    return axios.post(base.login,       {
-      params: {
-        username: params.username,
-        password: params.password
-      }
-    })
+    return axios.post(base.login,params)
   },
   /**
    * 商品列表

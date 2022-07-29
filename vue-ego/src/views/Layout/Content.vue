@@ -29,6 +29,7 @@ export default {
     }
   },
   created () {
+    console.log('process', process)
     console.log("userinfo",this.userinfo.user);
   },
   methods: {
